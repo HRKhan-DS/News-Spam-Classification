@@ -3,13 +3,15 @@ import numpy as np
 import pandas as pd
 import pickle
 
+# Try reading the CSV file with a different encoding
+encodings_to_try = ['utf-8', 'latin-1', 'ISO-8859-1']
 
-with open("RandomForestModel.pkl", "rb") as model_file:
-    rf_model = pickle.load(model_file)
-
-# df = pd.read_csv('clear_data.csv')
-# Specify the encoding when reading the CSV file
-df = pd.read_csv('clear_data.csv', encoding='utf-8')
+for encoding in encodings_to_try:
+    try:
+        df = pd.read_csv('clear_data.csv', encoding=encoding)
+        break  # Break the loop if successful
+    except UnicodeDecodeError:
+        continue  # Try the next encoding
 
 def main():
     st.title("Fake News Classification")
@@ -37,10 +39,10 @@ def main():
     # Larger gap using multiple <br> tags
     st.markdown("<br><br><br>", unsafe_allow_html=True)
 
-    # Instructions for SMS Spam Classifier
+    # Instructions for Fake News Classifier
     st.write("Welcome to the Fake News Classifier!")
     st.write("To determine whether the news is true or false, enter the name of the news author and the title in the input box.")
-    st.write("Click the 'Classify' button, and the result (spam or not spam) will be displayed above.")
+    st write("Click the 'Classify' button, and the result (real or fake) will be displayed above.")
 
 if __name__ == '__main__':
     main()

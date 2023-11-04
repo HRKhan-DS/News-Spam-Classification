@@ -7,6 +7,7 @@ import pickle
 with open("RandomForestModel.pkl", "rb") as model_file:
     rf_model = pickle.load(model_file)
 
+# Define df globally
 # Try reading the CSV file with different encodings
 encodings_to_try = ['utf-8', 'latin-1', 'ISO-8859-1']
 
@@ -50,3 +51,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

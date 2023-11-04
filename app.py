@@ -7,7 +7,9 @@ import pickle
 with open("RandomForestModel.pkl", "rb") as model_file:
     rf_model = pickle.load(model_file)
 
-df = pd.read_csv('clear_data.csv')
+# df = pd.read_csv('clear_data.csv')
+# Specify the encoding when reading the CSV file
+df = pd.read_csv('clear_data.csv', encoding='utf-8')
 
 def main():
     st.title("Fake News Classification")

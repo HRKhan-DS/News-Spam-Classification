@@ -3,7 +3,11 @@ import numpy as np
 import pandas as pd
 import pickle
 
-# Try reading the CSV file with a different encoding
+# Load the Random Forest model outside of any function
+with open("RandomForestModel.pkl", "rb") as model_file:
+    rf_model = pickle.load(model_file)
+
+# Try reading the CSV file with different encodings
 encodings_to_try = ['utf-8', 'latin-1', 'ISO-8859-1']
 
 for encoding in encodings_to_try:

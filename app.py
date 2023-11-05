@@ -46,7 +46,7 @@ def main():
 
     # Instructions for Fake News Classifier
     st.write("News Spam Classification!")
-    st.write("To determine whether the news is true or false, enter the name of the news author and the title in the input box.")
+    st.write("To determine whether the news is true or false, enter the text into the box.")
     st.write("Click the 'Classify' button, and the result (real or fake) will be displayed above.")
 
 if __name__ == '__main__':

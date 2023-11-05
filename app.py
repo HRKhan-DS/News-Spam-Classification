@@ -20,7 +20,7 @@ for encoding in encodings_to_try:
 
 def main():
     global rf_model  # Declare rf_model as a global variable
-    st.title("Fake News Classification")
+    st.title("News Spam Classification")
 
     # Create an input text area for the user to enter news content
     input_data = st.text_area("Enter the news text:")

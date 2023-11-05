@@ -7,7 +7,6 @@ import pickle
 with open("RandomForestModel.pkl", "rb") as model_file:
     rf_model = pickle.load(model_file)
 
-# Define df globally
 # Try reading the CSV file with different encodings
 encodings_to_try = ['utf-8', 'latin-1', 'ISO-8859-1']
 
@@ -46,7 +45,7 @@ def main():
     st.markdown("<br><br><br>", unsafe_allow_html=True)
 
     # Instructions for Fake News Classifier
-    st.write("Welcome to the Fake News Classifier!")
+    st.write("News Spam Classification!")
     st.write("To determine whether the news is true or false, enter the name of the news author and the title in the input box.")
     st.write("Click the 'Classify' button, and the result (real or fake) will be displayed above.")
 
